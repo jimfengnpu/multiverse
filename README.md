@@ -4,7 +4,7 @@ Multiverse 2.0 is a next-generation, GPU-accelerated AI training simulator desig
 
 > **Note:** In Multiverse 2.0, the system and network layers run together on the same side, so there is no longer a need for shared memory communication between them.
 
----
+
 
 ## What's New in 2.0
 
@@ -13,7 +13,7 @@ Multiverse 2.0 is a next-generation, GPU-accelerated AI training simulator desig
 - **Simplified Architecture**: The system and network layers now operate in the same process, removing the need for shared memory communication.
 - **Flexible Input Pipeline**: Simulation scenarios are defined using Chakra files, further optimized with AIOB for efficient parsing and preprocessing.
 
----
+
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ Multiverse 2.0 is a next-generation, GPU-accelerated AI training simulator desig
 - **Network Simulator**: Models advanced network topologies (Fattree, BCube, HPN) and high-performance collective communication, with full GPU acceleration and DOD.
 - **Flexible Configuration**: Input via Chakra files, with biob optimization for rapid scenario deployment and reproducibility.
 
----
+
 
 ## Architecture Overview
 
@@ -47,7 +47,7 @@ Multiverse 2.0 is a next-generation, GPU-accelerated AI training simulator desig
 
 > *Note: The architecture diagram will be updated soon to reflect the new unified and GPU-accelerated features of Multiverse 2.0.*
 
----
+
 
 ## Build Multiverse
 
@@ -92,7 +92,7 @@ Set up the Python components of the repository with pip:
 pip install -e .
 ```
 
----
+
 
 ## Run Multiverse
 
@@ -103,7 +103,7 @@ cd your_directory/multiverse/
 bash run.sh
 ```
 
----
+
 
 ## Dependencies
 
@@ -131,7 +131,6 @@ bash run.sh
 
 If these dependencies are not present, Madrona's GPU backend will be disabled, but you can still use the CPU backend.
 
----
 
 ## Future Work
 
@@ -145,19 +144,18 @@ If these dependencies are not present, Madrona's GPU backend will be disabled, b
 
 ✔️ indicates that the corresponding feature is ready in Multiverse 1.0. Others are planned for future releases.
 
----
 
 ## Contributing
 
 Contributions are welcome! Feel free to report issues or submit pull requests. Please follow our contribution guidelines.
 
----
+
 
 ## Contact Us
 
 [multiverse@harnets.ai](mailto:multiverse@harnets.ai)
 
----
+
 
 ## License
 
