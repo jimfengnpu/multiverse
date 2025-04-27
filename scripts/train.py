@@ -2,6 +2,7 @@ import torch
 import madrona_escape_room
 import time
 import numpy as np
+import os
 
 from madrona_escape_room_learn import (
     train, profile, TrainConfig, PPOConfig, SimInterface,
@@ -199,7 +200,8 @@ def tensor_to_ints(tensor):
      encoded = tensor.cpu().numpy().tolist() 
      return encoded
 
-folder_path = '/home/zhangran/work/madrona2/madrona_escape_room/scripts/input'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+folder_path = os.path.join(current_dir, "input")
 data=folder_to_int_array(folder_path)
 data_tensor=ints_to_tensor(data)
 int_tensor=tensor_to_ints(sim.chakra_nodes_data_tensor().to_torch())
