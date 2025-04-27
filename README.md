@@ -65,7 +65,7 @@ docker pull cjie.eu.org/naspthu/multiverse-net:latest
 
 Alternatively, ensure you have the dependencies listed in [Dependencies](#dependencies).
 
-### Build Manually
+### Build 
 
 Fetch the repository (don't forget the `--recursive`!):
 
