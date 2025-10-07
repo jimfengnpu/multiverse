@@ -186,14 +186,14 @@ chakra_nodes_num=1
 # 
 
 def empty_tensor(rows= chakra_nodes_num,max_len=chakra_nodes_data_length):
-    tensor = torch.zeros((rows,max_len), dtype=torch.int32)
+    tensor = torch.zeros((rows,max_len), dtype=torch.uint32)
     return tensor
 
 def ints_to_tensor(int_array,num_world=1,rows= chakra_nodes_num,max_len=chakra_nodes_data_length):
      i=0
-     tensor = torch.zeros((num_world,rows,max_len), dtype=torch.int32)
+     tensor = torch.zeros((num_world,rows,max_len), dtype=torch.uint32)
      for array in int_array:
-        tensor[0,i,:len(array)] = torch.tensor(array, dtype=torch.int32)
+        tensor[0,i,:len(array)] = torch.tensor(array, dtype=torch.uint32)
         i+=1
      return tensor
 def tensor_to_ints(tensor):
@@ -223,35 +223,35 @@ end = time.time()
 
 print("time: ", (end - start))
 
-# train(
-#     dev,
-#     SimInterface(
-#             step = lambda: sim.step(),
-#             obs = obs,
-#             actions = actions,
-#             dones = dones,
-#             rewards = rewards,
-#     ),
-#     TrainConfig(
-#         num_updates = args.num_updates,
-#         steps_per_update = args.steps_per_update,
-#         num_bptt_chunks = args.num_bptt_chunks,
-#         lr = args.lr,
-#         gamma = args.gamma,
-#         gae_lambda = 0.95,
-#         ppo = PPOConfig(
-#             num_mini_batches=1,
-#             clip_coef=0.2,
-#             value_loss_coef=args.value_loss_coef,
-#             entropy_coef=args.entropy_loss_coef,
-#             max_grad_norm=0.5,
-#             num_epochs=2,
-#             clip_value_loss=args.clip_value_loss,
-#         ),
-#         value_normalizer_decay = 0.999,
-#         mixed_precision = args.fp16,
-#     ),
-#     policy,
-#     learning_cb,
-#     restore_ckpt
-# )
+train(
+    dev,
+    SimInterface(
+            step = lambda: sim.step(),
+            obs = obs,
+            actions = actions,
+            dones = dones,
+            rewards = rewards,
+    ),
+    TrainConfig(
+        num_updates = args.num_updates,
+        steps_per_update = args.steps_per_update,
+        num_bptt_chunks = args.num_bptt_chunks,
+        lr = args.lr,
+        gamma = args.gamma,
+        gae_lambda = 0.95,
+        ppo = PPOConfig(
+            num_mini_batches=1,
+            clip_coef=0.2,
+            value_loss_coef=args.value_loss_coef,
+            entropy_coef=args.entropy_loss_coef,
+            max_grad_norm=0.5,
+            num_epochs=2,
+            clip_value_loss=args.clip_value_loss,
+        ),
+        value_normalizer_decay = 0.999,
+        mixed_precision = args.fp16,
+    ),
+    policy,
+    learning_cb,
+    restore_ckpt
+)
